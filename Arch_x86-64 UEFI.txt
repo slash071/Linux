@@ -88,7 +88,7 @@
 		# vim /etc/hosts
 			Paste:
 				127.0.0.1	localhost
-				::1			localhost
+				::1		localhost
 				127.0.1.1	<myhostname>.localdomain	<myhostname>
 
 14. Root password
@@ -117,20 +117,20 @@
 		# reboot
 
 -------------------------------POST tweaks--------------------------------
-	A.Adding DNS server:
-	(this header file be appended to the /etc/resolv.conf)
+	A. Adding DNS server:
+	(This header file be appended to the /etc/resolv.conf)
 		# sudo vim /etc/resolv.conf.head
-			paste:
+			Paste:
 				nameserver 8.8.8.8
 				nameserver 8.8.4.4
 	
-	B.making network reachable:
+	B. Making network reachable:
 		# systemctl start NetworkManager
 		For Wi-Fi activate connection with:
 			# nmtui
 		# systemctl enable NetworkManager
 			
-	C.Install yay(AUR helper)
+	C. Install yay(AUR helper)
 		# cd /opt
 		# sudo git clone https://aur.archlinux.org/yay-git.git
 		# sudo chown -R username:users ./yay-git
