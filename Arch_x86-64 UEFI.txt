@@ -1,0 +1,140 @@
+-----------------------------Pre-installation-----------------------------
+00. Set the console keyboard layout
+		Default is US (No need to loadkeys)
+		Change console font & size:
+			# setfont ter-dXXb.psf.gz
+			(fonts are stored in /usr/share/kbd/consolefonts/)
+		
+01. Verify the boot mode
+		# ls /sys/firmware/efi/efivars
+			If shows directory its UEFI mode,
+			If directory does not exist, it may be BIOS mode.
+
+02. Connect to the internet
+		Ensure network interface:
+			# ip a
+		For wireless connection:
+			# iwctl
+		Verify connection: 
+			# ping archlinux.org
+
+03. Update the system clock
+		# timedatectl set-ntp true
+		check status:
+			# timedatectl status
+
+04. Partition the disks
+		Partitioning using cfdisk:
+			300M for boot is enough as EFI System
+			2G for swap as Linux swap as Linux swap
+			Remaining space for the root as Linux filesystem
+
+05. Format the partitions
+		# mkfs.ext4 /dev/root_partition
+		# mkswap /dev/swap_partition
+		(Only format the EPS if you created now,
+		In other words, if you are dual-booting DO NOT format EFI partition,
+		Just use it)
+			# mkfs.fat -F 32 /dev/efi_system_partition
+
+06. Mount the file systems
+		# mount /dev/root_partition /mnt
+		# swapon /dev/swap_partition
+		# mount --mkdir /dev/efi_system_partition /mnt/boot
+		
+-------------------------------Installation-------------------------------
+07. Select the mirrors
+		Synchronize servers:
+			# pacman -Syy
+		
+08. Install essential packages
+		# pacstrap /mnt base linux linux-firmware linux-headers
+		
+---------------------------Configure the system---------------------------
+09. Fstab
+		# genfstab -U /mnt >> /mnt/etc/fstab
+	
+10. Chroot
+		# arch-chroot /mnt
+		Set font permanently:
+			# echo FONT=ter-dXXb.psf.gz >> /etc/vconsole.conf
+		Install packages:
+			# pacman -S{
+				vim vi nano sudo base-devel terminus-font git wget ttf-dejavu
+				networkmanager network-manager-applet networkmanager-openvpn
+				openvpn dialog dhcpcd wpa_supplicant ifplugd wireless_tools
+				bluez bluez-utils xdg-utils pulseaudio alsa-utils gvfs
+				xdg-user-dirs libinput pulsemixer brightnessctl
+				grub efibootmgr dosfstools mtools os-prober
+			}
+
+11. Time zone
+		# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+			ln -sf /usr/share/zoneinfo/Iran /etc/localtime
+		# hwclock --systohc
+		
+12. Localization
+		# vim /etc/locale.gen
+			Uncomment: 
+				en_US.UTF-8 UTF-8
+				en_US ISO-XXXX-X
+				fa_IR UTF-8
+			Save the file
+		# locale-gen
+		# echo LANG=en_US.UTF-8 >> /etc/locale.conf
+
+13. Network configuration
+		# echo <myhostname> >> /etc/hostname
+		# vim /etc/hosts
+			Paste:
+				127.0.0.1	localhost
+				::1			localhost
+				127.0.1.1	<myhostname>.localdomain	<myhostname>
+
+14. Root password
+		# passwd
+
+15. Add user(s)
+		# useradd -m -g users -G wheel <username>
+		Give user the admin privileges:
+			# EDITOR=nano visudo
+				Uncomment: %wheel ALL=(ALL:ALL) ALL
+		Add password for the user:
+			# passwd <username>
+		Make sure the user directory is created:
+			#ls /home/username
+		
+16. Boot loader (inside arch-chroot)
+		# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+		Make sure os-porber is not disabled in /etc/default/grub
+		Make grub config file:
+			# grub-mkconfig -o /boot/grub/grub.cfg
+				
+17. Reboot
+		Exit chroot, unmount all and then reboot:
+		# exit
+		# umount -a
+		# reboot
+
+-------------------------------POST tweaks--------------------------------
+	A.Adding DNS server:
+	(this header file be appended to the /etc/resolv.conf)
+		# sudo vim /etc/resolv.conf.head
+			paste:
+				nameserver 8.8.8.8
+				nameserver 8.8.4.4
+	
+	B.making network reachable:
+		# systemctl start NetworkManager
+		For Wi-Fi activate connection with:
+			# nmtui
+		# systemctl enable NetworkManager
+			
+	C.Install yay(AUR helper)
+		# cd /opt
+		# sudo git clone https://aur.archlinux.org/yay-git.git
+		# sudo chown -R username:users ./yay-git
+		# cd yay-git
+		# makepkg -si
+		
+Done!
