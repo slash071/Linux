@@ -63,14 +63,14 @@
 				vim vi nano sudo base-devel terminus-font git wget ttf-dejavu
 				networkmanager network-manager-applet networkmanager-openvpn
 				openvpn dialog dhcpcd wpa_supplicant ifplugd wireless_tools
-				bluez bluez-utils xdg-utils pulseaudio alsa-utils gvfs
-				xdg-user-dirs libinput pulsemixer brightnessctl
+				bluez bluez-utils xdg-utils xdg-user-dirs gvfs
+				libinput brightnessctl pulseaudio alsa-utils
 				grub efibootmgr dosfstools mtools os-prober
 			}
 
 11. Time zone
 		# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
-			ln -sf /usr/share/zoneinfo/Iran /etc/localtime
+			ln -sf /usr/share/zoneinfo/Asia/Tehran /etc/localtime
 		# hwclock --systohc
 		
 12. Localization
