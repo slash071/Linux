@@ -63,8 +63,9 @@
 				vim vi nano sudo base-devel terminus-font git wget ttf-dejavu
 				networkmanager network-manager-applet networkmanager-openvpn
 				openvpn dialog dhcpcd wpa_supplicant ifplugd wireless_tools
-				bluez bluez-utils xdg-utils xdg-user-dirs gvfs
-				libinput brightnessctl pulseaudio alsa-utils
+				pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils 
+				bluez bluez-utils xdg-utils xdg-user-dirs
+				libinput brightnessctl gvfs
 				grub efibootmgr dosfstools mtools os-prober
 			}
 
