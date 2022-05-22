@@ -112,7 +112,8 @@
 			# grub-mkconfig -o /boot/grub/grub.cfg
 				
 17. Reboot
-		Exit chroot, unmount all and then reboot:
+		Regenerate initramfs, Exit chroot, unmount all and reboot:
+		# mkinitcpio -p linux
 		# exit
 		# umount -R /mnt
 		# reboot
