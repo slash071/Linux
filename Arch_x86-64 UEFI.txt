@@ -64,8 +64,8 @@
 				networkmanager network-manager-applet networkmanager-openvpn
 				openvpn dialog dhcpcd wpa_supplicant ifplugd wireless_tools
 				pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils 
-				bluez bluez-utils xdg-utils xdg-user-dirs
-				libinput brightnessctl gvfs
+				bluez bluez-utils xdg-utils xdg-user-dirs bind
+				libinput brightnessctl gvfs openresolv 
 				grub efibootmgr dosfstools mtools os-prober
 			}
 
@@ -114,7 +114,7 @@
 17. Reboot
 		Exit chroot, unmount all and then reboot:
 		# exit
-		# umount -a
+		# umount -R /mnt
 		# reboot
 
 -------------------------------POST tweaks--------------------------------
