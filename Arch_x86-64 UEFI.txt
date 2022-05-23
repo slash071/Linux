@@ -119,24 +119,27 @@
 		# reboot
 
 -------------------------------POST tweaks--------------------------------
-	A. Adding DNS server
-	(This header file be appended to the /etc/resolv.conf)
-		# sudo vim /etc/resolv.conf.head
-			Paste:
-				nameserver 8.8.8.8
-				nameserver 8.8.4.4
-	
-	B. Making network reachable
-		# systemctl start NetworkManager
-		For Wi-Fi activate connection with:
-			# nmtui
-		# systemctl enable NetworkManager
-			
-	C. Install yay(AUR helper)
-		# cd /opt
-		# sudo git clone https://aur.archlinux.org/yay-git.git
-		# sudo chown -R username:users ./yay-git
-		# cd yay-git
-		# makepkg -si
-		
+A. Adding DNS server (Configure NetworkManager to use resolvconf)
+	# sudo vim /etc/NetworkManager/conf.d/rc-manager.conf
+		Paste:
+			[main]
+			rc-manager=resolvconf
+	# sudo vim /etc/resolvconf.conf
+		Paste:
+			name_servers="8.8.8.8 8.8.4.4"
+	#sudo resolvconf -u	
+
+B. Making network reachable
+	# systemctl start NetworkManager
+	For Wi-Fi activate connection with:
+		# nmtui
+	# systemctl enable NetworkManager
+
+C. Install yay(AUR helper)
+	# cd /opt
+	# sudo git clone https://aur.archlinux.org/yay-git.git
+	# sudo chown -R username:users ./yay-git
+	# cd yay-git
+	# makepkg -si
+
 Done!
