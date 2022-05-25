@@ -119,7 +119,7 @@
 		# reboot
 
 -------------------------------POST tweaks--------------------------------
-A. Adding DNS server (Configure NetworkManager to use resolvconf)
+A. Add DNS server (Configure NetworkManager to use resolvconf)
 	# sudo vim /etc/NetworkManager/conf.d/rc-manager.conf
 		Paste:
 			[main]
@@ -129,7 +129,7 @@ A. Adding DNS server (Configure NetworkManager to use resolvconf)
 			name_servers="8.8.8.8 8.8.4.4"
 	#sudo resolvconf -u	
 
-B. Making network reachable
+B. Make network reachable
 	# systemctl start NetworkManager
 	For Wi-Fi activate connection with:
 		# nmtui
