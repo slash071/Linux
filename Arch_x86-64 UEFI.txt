@@ -142,4 +142,10 @@ C. Install yay(AUR helper)
 	# cd yay-git
 	# makepkg -si
 
+D. Disable beep sound (Unloading the pcspkr kernel module)
+	# sudo vim /etc/modprobe.d/nobeep.conf
+		Paste:	
+			blacklist pcspkr
+	# mkinitcpio -p linux
+
 Done!
