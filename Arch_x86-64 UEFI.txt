@@ -64,8 +64,8 @@
 				networkmanager network-manager-applet networkmanager-openvpn
 				openvpn dialog dhcpcd wpa_supplicant ifplugd wireless_tools
 				pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils 
-				bluez bluez-utils xdg-utils xdg-user-dirs bind
-				libinput brightnessctl gvfs openresolv 
+				bluez bluez-utils xdg-utils xdg-user-dirs bind traceroute
+				libinput brightnessctl gvfs openresolv net-tools
 				grub efibootmgr dosfstools mtools os-prober
 			}
 
@@ -130,10 +130,10 @@ A. Add DNS server (Configure NetworkManager to use resolvconf)
 	#sudo resolvconf -u	
 
 B. Make network reachable
-	# systemctl start NetworkManager
+	# sudo systemctl start NetworkManager
 	For Wi-Fi activate connection with:
 		# nmtui
-	# systemctl enable NetworkManager
+	# sudo systemctl enable NetworkManager
 
 C. Install yay(AUR helper)
 	# cd /opt
