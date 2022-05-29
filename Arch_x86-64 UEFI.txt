@@ -61,11 +61,11 @@
 		Install packages:
 			# pacman -S{
 				vim vi nano sudo base-devel terminus-font git wget ttf-dejavu
-				networkmanager network-manager-applet networkmanager-openvpn
-				openvpn dialog dhcpcd wpa_supplicant ifplugd wireless_tools
+				networkmanager networkmanager-openvpn traceroute net-tools
+				dialog dhcpcd wpa_supplicant ifplugd wireless_tools  bind
 				pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils 
-				bluez bluez-utils xdg-utils xdg-user-dirs bind traceroute
-				libinput brightnessctl gvfs openresolv net-tools
+				bluez bluez-utils xdg-utils xdg-user-dirs
+				libinput brightnessctl gvfs openresolv 
 				grub efibootmgr dosfstools mtools os-prober
 			}
 
