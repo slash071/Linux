@@ -148,4 +148,14 @@ D. Disable beep sound (Unloading the pcspkr kernel module)
 			blacklist pcspkr
 	# sudo mkinitcpio -p linux
 
+E. configuring touchpad
+	# sudo nano /etc/X11/xorg.conf.d/30-touchpad.conf
+		Paste:
+			Section "InputClass"
+    				Identifier "devname"
+    				Driver "libinput"
+				Option "Tapping" "on"
+				Option "NaturalScrolling" "true"
+			EndSection
+	
 Done!
