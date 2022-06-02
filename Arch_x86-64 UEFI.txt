@@ -26,7 +26,7 @@
 04. Partition the disks
 		Partitioning using cfdisk:
 			300M for boot is enough as EFI System
-			2G for swap as Linux swap as Linux swap
+			2G for swap as Linux swap
 			Remaining space for the root as Linux filesystem
 
 05. Format the partitions
