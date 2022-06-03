@@ -26,8 +26,8 @@
 
 <!--LIST -->
 ## Software I use
-|Software		| Name                                                                                                 					              |
-|-----------------------|------------------------------------------------------------------------------------------------------------|
+|Software		| Name                                                                                                               |
+|-----------------------|-------------------------------------------------------------------------------------------------------|
 | Distribution		|  [Arch Linux](https://archlinux.org/)  |
 | Graphical server  |  [Xorg](https://www.x.org/wiki/)  |
 | WM			|  [Qtile](https://wiki.archlinux.org/title/Qtile), [bspwm](https://wiki.archlinux.org/title/Bspwm)  |
