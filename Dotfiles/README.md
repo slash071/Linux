@@ -42,8 +42,8 @@
 | Background setter	|  [Nitrogen](https://wiki.archlinux.org/title/Nitrogen)											                                                                         |
 | Launchers		|  [dmenu](https://tools.suckless.org/dmenu/), [Rofi](https://wiki.archlinux.org/title/Rofi)                                                       |
 | Screenshots		|  [scrot](https://github.com/resurrecting-open-source-projects/scrot)                                                                           |
-| Icon themes		|  [Papirus icon](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)     	                                                                 |
-| Sound			|  [Pulseaudio](https://wiki.archlinux.org/title/PulseAudio), [Pavucontrol](https://github.com/pulseaudio/pavucontrol)(GUI) 		                        |
+| Icon themes		|  [Papirus icon](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)     	                                                            |
+| Sound			|  [Pulseaudio](https://wiki.archlinux.org/title/PulseAudio), [Pavucontrol](https://github.com/pulseaudio/pavucontrol) (GUI)		                        |
 | Brightness  |  [Brightnessctl](https://github.com/Hummer12007/brightnessctl)                                                                                  |
 | Network		|  [Network manager](https://wiki.archlinux.org/title/NetworkManager)									                                                                       |
 | Font(s)  |  [Hack Nerd](https://github.com/ryanoasis/nerd-fonts), [Font Awesome](https://fontawesome.com/), [siji](https://github.com/stark/siji)             |
