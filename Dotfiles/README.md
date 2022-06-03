@@ -7,6 +7,17 @@
   </b>
 </h1>
  
+ </div>
+  
+<div align="center">
+  <img src="https://img.shields.io/github/stars/slash071/Linux"> 
+  <img src="https://img.shields.io/github/license/slash071/Linux?color=purple">
+  <img src="https://img.shields.io/badge/Linux-%F0%9F%90%A7-yellow">
+  <img src="https://img.shields.io/github/repo-size/slash071/Linux?color=cyan">
+  <img src="https://img.shields.io/github/last-commit/slash071/Linux"> 
+</div>
+
+ 
 ## Software I use
 |Software		| Name                                                                                                 					                                         |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------|
