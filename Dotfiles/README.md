@@ -29,7 +29,7 @@
 |Software		| Name                                                                                                 					                                         |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 | Distribution		|  [Arch Linux](https://archlinux.org/)													                                                                                            |
-| Graphical server  | [Xorg](https://www.x.org/wiki/)                                                                                                           |
+| Graphical server  |  [Xorg](https://www.x.org/wiki/)                                                                                                           |
 | WM			|  [Qtile](https://wiki.archlinux.org/title/Qtile), [bspwm](https://wiki.archlinux.org/title/Bspwm)														                                        |
 | Compositor		|  [Picom (Jonaburg)](https://github.com/jonaburg/picom) 											                                                                              |
 | Status bar		|  [Polybar](https://github.com/polybar/polybar)				                                               							                                        |
