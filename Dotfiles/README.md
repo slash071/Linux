@@ -7,8 +7,7 @@
   </b>
 </h1>
  
- </div>
-  
+  <!-- BADGES-->
 <div align="center">
   <img src="https://img.shields.io/github/stars/slash071/Linux"> 
   <img src="https://img.shields.io/github/license/slash071/Linux?color=purple">
@@ -17,23 +16,26 @@
   <img src="https://img.shields.io/github/last-commit/slash071/Linux"> 
 </div>
 
- 
+<!--LIST -->
 ## Software I use
 |Software		| Name                                                                                                 					                                         |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| Distribution		| [Arch Linux](https://archlinux.org/)													                                                                                             |
-| WM			| [Qtile](https://wiki.archlinux.org/title/Qtile), [bspwm](https://wiki.archlinux.org/title/Bspwm)														                                         |
-| Status bar		| [Polybar](https://github.com/polybar/polybar)				                                               							                                         |
-| Login Manager		| [LightDM](https://wiki.archlinux.org/title/LightDM)										                                                	                               |
-| Screen locker		| [Betterlockscreen](https://github.com/betterlockscreen/betterlockscreen)								                                                             |
-| Prompt		| [Starship](https://starship.rs/)										                                                                          			                             |
-| Browsers		| [Chromium](https://www.chromium.org/chromium-projects/), [Firefox](https://www.mozilla.org/en-US/firefox/new/)		                                  |
-| Video/Audio player	| [VLC](https://www.videolan.org/vlc/), [mpv](https://wiki.archlinux.org/title/Mpv)							               					                             |
-| Background setter	| [Nitrogen](https://wiki.archlinux.org/title/Nitrogen)											                                                                          |
-| Launchers		| [dmenu](https://tools.suckless.org/dmenu/), [Rofi](https://wiki.archlinux.org/title/Rofi)                                                        |
-| Screenshots		| [scrot](https://github.com/resurrecting-open-source-projects/scrot)                                                                            |
-| Icon themes		| [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)     	                                                                  |
-| Sound			| [Pulseaudio](https://wiki.archlinux.org/title/PulseAudio), [Pavucontrol](https://github.com/pulseaudio/pavucontrol) (GUI)		                         |
-| Network		| [Network manager](https://wiki.archlinux.org/title/NetworkManager)									                                                                        |
-| Compositor		| [Picom (Jonaburg)](https://github.com/jonaburg/picom) 											                                                                               |
-|Brightness controller  | [Brightnessctl](https://github.com/Hummer12007/brightnessctl)                                                                         |
+| Distribution		|  [Arch Linux](https://archlinux.org/)													                                                                                            |
+| Graphical server  | [Xorg](https://www.x.org/wiki/)                                                                                                           |
+| WM			|  [Qtile](https://wiki.archlinux.org/title/Qtile), [bspwm](https://wiki.archlinux.org/title/Bspwm)														                                        |
+| Compositor		|  [Picom (Jonaburg)](https://github.com/jonaburg/picom) 											                                                                              |
+| Status bar		|  [Polybar](https://github.com/polybar/polybar)				                                               							                                        |
+| Login Manager		|  [LightDM](https://wiki.archlinux.org/title/LightDM)										                                                	                              |
+| Screen locker		|  [Betterlockscreen](https://github.com/betterlockscreen/betterlockscreen)								                                                            |
+| Prompt		|  [Starship](https://starship.rs/)										                                                                          			                            |
+| Browsers		|  [Chromium](https://www.chromium.org/chromium-projects/), [Firefox](https://www.mozilla.org/en-US/firefox/new/)		                                 |
+| Video/Audio player	|  [VLC](https://www.videolan.org/vlc/), [mpv](https://wiki.archlinux.org/title/Mpv)							               					                            |
+| File manager  |  [Thunar](https://wiki.archlinux.org/title/thunar), [ranger](https://github.com/ranger/ranger)                                                |
+| Background setter	|  [Nitrogen](https://wiki.archlinux.org/title/Nitrogen)											                                                                         |
+| Launchers		|  [dmenu](https://tools.suckless.org/dmenu/), [Rofi](https://wiki.archlinux.org/title/Rofi)                                                       |
+| Screenshots		|  [scrot](https://github.com/resurrecting-open-source-projects/scrot)                                                                           |
+| Icon themes		|  [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)     	                                                                 |
+| Sound			|  [Pulseaudio](https://wiki.archlinux.org/title/PulseAudio), [Pavucontrol](https://github.com/pulseaudio/pavucontrol)(GUI) 		                        |
+| Brightness  |  [Brightnessctl](https://github.com/Hummer12007/brightnessctl)                                                                                  |
+| Network		|  [Network manager](https://wiki.archlinux.org/title/NetworkManager)									                                                                       |
+| Font(s)  |  [Hack Nerd](https://github.com/ryanoasis/nerd-fonts), [Font Awesome](https://fontawesome.com/), [siji](https://github.com/stark/siji)             |
