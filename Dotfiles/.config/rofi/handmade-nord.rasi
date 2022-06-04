@@ -96,7 +96,7 @@ element selected urgent {
 }
 
 element-icon {
-    size:   0.8em;
+    size:   1.5em;
 }
 
 element-text {
