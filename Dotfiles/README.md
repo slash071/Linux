@@ -34,6 +34,7 @@
 | Status bar		|  [Polybar](https://github.com/polybar/polybar)  |
 | Login Manager		|  [LightDM](https://wiki.archlinux.org/title/LightDM), [xinit](https://wiki.archlinux.org/title/Xinit)  |
 | Screen locker		|  [Betterlockscreen](https://github.com/betterlockscreen/betterlockscreen)  |
+| Terminal  |  [xfce-terminal](https://docs.xfce.org/apps/terminal/start)  |
 | Prompt		|  [Starship](https://starship.rs/)  |
 | Browsers		|  [Chromium](https://www.chromium.org/chromium-projects/), [Firefox](https://www.mozilla.org/en-US/firefox/new/)  |
 | Video/Audio player	|  [VLC](https://www.videolan.org/vlc/), [mpv](https://wiki.archlinux.org/title/Mpv)  |
