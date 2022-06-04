@@ -7,13 +7,11 @@
   </b>
 </h1>
  
-<!-- HEADER PICTURE
+<!-- HEADER PICTURE -->
 <div align="center">
- 
-
-
+![header](https://user-images.githubusercontent.com/81623530/171997410-58afe886-d3db-4e91-ba84-53a7f6da8584.png)
 </div>
--->
+
  
   <!-- BADGES-->
 <div align="center">
