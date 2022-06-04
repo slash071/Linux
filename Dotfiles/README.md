@@ -46,6 +46,6 @@
 | Sound			|  [Pulseaudio](https://wiki.archlinux.org/title/PulseAudio), [Pavucontrol](https://github.com/pulseaudio/pavucontrol) (GUI)  |
 | Brightness  |  [Brightnessctl](https://github.com/Hummer12007/brightnessctl)  |
 | Network		|  [NetworkManager](https://wiki.archlinux.org/title/NetworkManager)  |
-| Font(s)  |  [Hack Nerd](https://github.com/ryanoasis/nerd-fonts), [Font Awesome](https://fontawesome.com/), [siji](https://github.com/stark/siji)  |
+| Font(s)  |  [Hack Nerd](https://github.com/ryanoasis/nerd-fonts), [Font Awesome](https://fontawesome.com/), [Siji](https://github.com/stark/siji)  |
 
 <sub> I use Arch BTW </sub>
