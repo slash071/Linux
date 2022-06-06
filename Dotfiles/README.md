@@ -45,7 +45,6 @@
 | Screenshots		|  [scrot](https://github.com/resurrecting-open-source-projects/scrot)  |
 | Icon themes		|  [Papirus icon](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)  |
 | Sound			|  [Pulseaudio](https://wiki.archlinux.org/title/PulseAudio), [Pavucontrol](https://github.com/pulseaudio/pavucontrol) (GUI)  |
-| Brightness  |  [Brightnessctl](https://github.com/Hummer12007/brightnessctl)  |
 | Network		|  [NetworkManager](https://wiki.archlinux.org/title/NetworkManager)  |
 | Notification client |  [Dunst](https://wiki.archlinux.org/title/Dunst)  |
 | Font(s)  |  [Hack Nerd](https://github.com/ryanoasis/nerd-fonts), [Font Awesome](https://fontawesome.com/), </br> [Siji](https://github.com/stark/siji), [Ubuntu Font Family](https://archlinux.org/packages/community/any/ttf-ubuntu-font-family/), </br> [Unifont](https://aur.archlinux.org/packages/ttf-unifont), [Noto Emoji](https://archlinux.org/packages/extra/any/noto-fonts-emoji/)  |
