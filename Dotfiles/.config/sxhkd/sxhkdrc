@@ -125,7 +125,7 @@ super + {Left,Down,Up,Right}
 
 # brightness control
 XF86MonBrightness{Up,Down}
-	brightnessctl --device=intel_backlight s 10%{+,-}
+	xbacklight -{inc,dec} 10
 
 # volume control
 XF86Audio{Raise,Lower}Volume
