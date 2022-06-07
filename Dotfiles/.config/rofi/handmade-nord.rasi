@@ -1,6 +1,6 @@
-/**********************************************
-*              ~ Handmade Nord ~              *
-***********************************************/
+/************************
+*   ~ Handmade Nord ~   *
+*************************/
 configuration {
   display-drun: "Applications:";
   display-window: "Windows:";
