@@ -1,9 +1,6 @@
-/****************************************************************
-*                       ~ Handmade Nord ~                       *
-* This config is a combination of two different configs:        *
-* https://github.com/lr-tech/rofi-themes-collection             *
-* https://github.com/ericmurphyxyz/archrice/tree/master/.config *
-*****************************************************************/
+/**********************************************
+*              ~ Handmade Nord ~              *
+***********************************************/
 configuration {
   display-drun: "Applications:";
   display-window: "Windows:";
@@ -61,7 +58,7 @@ textbox {
 listview {
     padding:    4px 0;
     lines:      6;
-    columns:    1;
+    columns:    2;
 
     fixed-height:   false;
 }
