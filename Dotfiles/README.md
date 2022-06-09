@@ -36,6 +36,7 @@
 | Screen locker		|  [Betterlockscreen](https://github.com/betterlockscreen/betterlockscreen)  |
 | Terminal  |  [Xfce-terminal](https://docs.xfce.org/apps/terminal/start)  |
 | Text editor | [Vim](https://www.vim.org/), [Neovim](https://neovim.io/) |
+|Music player  | [Cmus](https://wiki.archlinux.org/title/Cmus)  |
 | Prompt		|  [Starship](https://starship.rs/)  |
 | Browsers		|  [Chromium](https://www.chromium.org/chromium-projects/), [Firefox](https://www.mozilla.org/en-US/firefox/new/)  |
 | Video/Audio player	|  [VLC](https://www.videolan.org/vlc/), [mpv](https://wiki.archlinux.org/title/Mpv)  |
@@ -47,6 +48,6 @@
 | Sound			|  [Pulseaudio](https://wiki.archlinux.org/title/PulseAudio), [Pavucontrol](https://github.com/pulseaudio/pavucontrol) (GUI)  |
 | Network		|  [NetworkManager](https://wiki.archlinux.org/title/NetworkManager)  |
 | Notification client |  [Dunst](https://wiki.archlinux.org/title/Dunst)  |
-| Font(s)  |  [Hack Nerd](https://github.com/ryanoasis/nerd-fonts), [Font Awesome](https://fontawesome.com/), </br> [Siji](https://github.com/stark/siji), [Ubuntu Font Family](https://archlinux.org/packages/community/any/ttf-ubuntu-font-family/), </br> [Unifont](https://aur.archlinux.org/packages/ttf-unifont), [Noto Emoji](https://archlinux.org/packages/extra/any/noto-fonts-emoji/)  |
+| Font(s)  |  [Hack Nerd](https://github.com/ryanoasis/nerd-fonts), [Font Awesome](https://fontawesome.com/), </br> [Siji](https://github.com/stark/siji), [Ubuntu Font Family](https://archlinux.org/packages/community/any/ttf-ubuntu-font-family/)  |
 
 <sub> I use Arch BTW </sub>
