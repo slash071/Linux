@@ -34,7 +34,7 @@
 | Status bar		|  [Polybar](https://github.com/polybar/polybar)  |
 | Login Manager		|  [LightDM](https://wiki.archlinux.org/title/LightDM), [Xinit](https://wiki.archlinux.org/title/Xinit)  |
 | Screen locker		|  [Betterlockscreen](https://github.com/betterlockscreen/betterlockscreen)  |
-| Terminal  |  [Xfce-terminal](https://docs.xfce.org/apps/terminal/start)  |
+| Terminal  |  [Alacritty](https://alacritty.org/), [Xfce-terminal](https://docs.xfce.org/apps/terminal/start)  |
 | Text editor | [Vim](https://www.vim.org/), [Neovim](https://neovim.io/) |
 |Music player  | [Cmus](https://wiki.archlinux.org/title/Cmus)  |
 | Prompt		|  [Starship](https://starship.rs/)  |
