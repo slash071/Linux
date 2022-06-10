@@ -37,7 +37,8 @@ configuration {
 
 window {
     location:   center;
-    width:      700;
+    height: 320px;
+    width:      600;
     y-offset:   -160;
 
     background-color:   @bg0;
@@ -64,7 +65,8 @@ textbox {
 }
 
 listview {
-    padding:    4px 0;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
     lines:      6;
     columns:    2;
 
@@ -72,8 +74,8 @@ listview {
 }
 
 element {
-    padding:    8px;
-    spacing:    8px;
+    padding:    5px;
+    spacing:    5px;
 }
 
 element normal normal {
@@ -106,4 +108,9 @@ element-icon {
 
 element-text {
     text-color: inherit;
+}
+
+button {
+   padding: 10px; 
+   horizontal-align: 0.3;
 }
