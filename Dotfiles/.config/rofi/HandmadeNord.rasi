@@ -2,11 +2,19 @@
 *   ~ Handmade Nord ~   *
 *************************/
 configuration {
-  display-drun: "Applications:";
-  display-window: "Windows:";
-  drun-display-format: "{name}";
-  font: "Hack Nerd 12";
-  modi: "window,run,drun";
+  modi: "run,drun,window";
+  font: "Hack Nerd 14";
+  show-icons: true;
+  terminal: "alacritty";
+  drun-display-format: "{icon} {name}";
+  location: 0;
+  disable-history: false;
+  hide-scrollbar: true;
+  display-drun: "   Apps ";
+  display-run: "   Run ";
+  display-window: " 﩯  window";
+  display-Network: " 󰤨  Network";
+  sidebar-mode: true;
 }
 
 * {
