@@ -191,8 +191,12 @@ layouts = [
     layout.MonadWide(**layout_theme),
     layout.Tile(**layout_theme),
     layout.Bsp(**layout_theme),
-    layout.Floating(**layout_theme),
-    layout.RatioTile(**layout_theme)
+    layout.RatioTile(**layout_theme),
+    layout.Floating(
+        border_width=4,
+    	border_focus=colors["cyan"],
+    	border_normal=colors["gray"]
+    )
     ## Try more layouts by unleashing below layouts :)
     #layout.Max(),
     # layout.Stack(),
@@ -408,10 +412,7 @@ floating_layout = layout.Floating(
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
-    ],
-    border_width=4,
-    border_focus=colors["cyan"],
-    border_normal=colors["gray"]
+    ]
 )
 
 auto_fullscreen = True
