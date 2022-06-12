@@ -23,6 +23,10 @@
   <img src="https://img.shields.io/github/last-commit/slash071/Linux"> 
 </div>
 
+<!-- SCREENSHOT(S)  -->
+### [Qtile](https://github.com/slash071/Linux/tree/main/Dotfiles/.config/qtile)
+![Qtile](https://user-images.githubusercontent.com/81623530/173227475-a1afe25f-51d6-4f3f-9d2b-69d87a75a492.jpg)
+
 <!--LIST -->
 ## Software I use
 |Software		| Name                                                                                                               |
