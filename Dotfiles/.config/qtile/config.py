@@ -159,7 +159,7 @@ for i, group in enumerate(groups):
     ])
 
 ################
-##   COLORS  ##
+##   COLORS   ##
 ################
 
 # I use Tokyonight
