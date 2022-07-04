@@ -333,11 +333,11 @@ screens = [
                     background=colors["red"],
                     foreground=colors["black"]
                 ),
-         		widget.Backlight(
-           		    fmt='{}',
- 		            brightness_file='/sys/class/backlight/intel_backlight/actual_brightness',
- 		            max_brightness_file='/sys/class/backlight/intel_backlight/max_brightness',
-        		    background=colors["red"],
+         	widget.Backlight(
+           	    fmt='{}',
+ 	            brightness_file='/sys/class/backlight/intel_backlight/actual_brightness',
+	            max_brightness_file='/sys/class/backlight/intel_backlight/max_brightness',
+       		    background=colors["red"],
                     foreground=colors["black"]
                 ),
                 left_arrow(colors["red"], colors["blue"]),
@@ -366,7 +366,7 @@ screens = [
                     foreground=colors["black"]
                 ),
                 left_arrow(colors["red"],colors["blue"]),
-        		widget.Battery(
+        	widget.Battery(
                     charge_char='',
                     discharge_char='',
                     format='{char} {percent:2.0%}',
