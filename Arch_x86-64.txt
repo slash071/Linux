@@ -26,8 +26,8 @@
 04. Partition the disks
 	Partitioning using cfdisk:
 		300M for boot is enough as EFI System		<- For UEFI with GPT
-		512 for boot is enough as Linux filesystem	<- For BIOS with MBR, (optinal)
-		2G-10G for swap as Linux swap			(optional)
+		512 for boot is enough as Linux filesystem	<- For BIOS with MBR, (optional)
+		2G-8G for swap as Linux swap			(optional)
 		Desired amount for home as Linux filesystem	(optional)
 		Remaining space for the root as Linux filesystem
 
