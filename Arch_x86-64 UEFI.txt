@@ -1,124 +1,125 @@
 ---------------------------------------Pre-installation---------------------------------------
 00. Set the console keyboard layout
-		Default is US (No need to loadkeys)
-		Change console font & size:
-			# setfont ter-dXXb.psf.gz
-			(fonts are stored in /usr/share/kbd/consolefonts/)
+	Default is US (No need to loadkeys)
+	Change console font & size:
+		# setfont ter-dXXb.psf.gz
+		(fonts are stored in /usr/share/kbd/consolefonts/)
 		
 01. Verify the boot mode
-		# ls /sys/firmware/efi/efivars
-			If shows directory its UEFI mode,
-			If directory does not exist, it may be BIOS mode.
+	# ls /sys/firmware/efi/efivars
+		If shows directory its UEFI mode,
+		If directory does not exist, it may be BIOS mode.
 
 02. Connect to the internet
-		Ensure network interface:
-			# ip a
-		For wireless connection:
-			# iwctl
-		Verify connection: 
-			# ping archlinux.org
+	Ensure network interface:
+		# ip a
+	For wireless connection:
+		# iwctl
+	Verify connection: 
+		# ping archlinux.org
 
 03. Update the system clock
-		# timedatectl set-ntp true
-		check status:
-			# timedatectl status
+	# timedatectl set-ntp true
+	check status:
+		# timedatectl status
 
 04. Partition the disks
 	Partitioning using cfdisk:
-		300M for boot is enough as EFI System			<- For UEFI with GPT
-		512 for boot is enough as Linux filesystem		<- For BIOS with MBR
+		300M for boot is enough as EFI System		<- For UEFI with GPT
+		512 for boot is enough as Linux filesystem	<- For BIOS with MBR
 		2G for swap as Linux swap
 		Remaining space for the root as Linux filesystem
 
 05. Format the partitions
-		# mkfs.ext4 /dev/root_partition
-		# mkswap /dev/swap_partition
-		(Only format the ESP/Boot if you created now,
-		In other words, if you are dual-booting DO NOT format EFI partition,
-		Just use it)
-			# mkfs.fat -F 32 /dev/efi_system_partition	<- For UEFI with GPT
-			# mkfs.ext4 /dev/boot_partition			<- For BIOS with MBR
+	# mkfs.ext4 /dev/root_partition
+	# mkswap /dev/swap_partition
+	(Only format the ESP/Boot if you created now,
+	In other words, if you are dual-booting DO NOT format EFI partition,
+	Just use it)
+		# mkfs.fat -F 32 /dev/efi_system_partition	<- For UEFI with GPT
+		# mkfs.ext4 /dev/boot_partition			<- For BIOS with MBR
 
 06. Mount the file systems
-		# mount /dev/root_partition /mnt
-		# swapon /dev/swap_partition
-		# mount --mkdir /dev/efi_system_partition /mnt/boot	<- For UEFI with GPT
-		# mount --mkdir /dev/boot_partition /mnt/boot		<- For BIOS with MBR
+	# mount /dev/root_partition /mnt
+	# swapon /dev/swap_partition
+	# mount --mkdir /dev/efi_system_partition /mnt/boot	<- For UEFI with GPT
+	# mount --mkdir /dev/boot_partition /mnt/boot		<- For BIOS with MBR
 		
 -----------------------------------------Installation-----------------------------------------
 07. Select the mirrors
-		Synchronize servers:
-			# pacman -Syy
-		
+	Synchronize servers:
+		# pacman -Syy
+	
 08. Install essential packages
-		# pacstrap /mnt base linux linux-firmware linux-headers intel-ucode
+	# pacstrap /mnt base linux linux-firmware linux-headers intel-ucode
 		
 -------------------------------------Configure the system-------------------------------------
 09. Fstab
-		# genfstab -U /mnt >> /mnt/etc/fstab
+	# genfstab -U /mnt >> /mnt/etc/fstab
 	
 10. Chroot
-		# arch-chroot /mnt
-		Set font permanently:
-			# echo FONT=ter-dXXb.psf.gz >> /etc/vconsole.conf
-		Install packages:
-			# pacman -S{
-				vim vi nano sudo base-devel terminus-font git wget ttf-dejavu gvfs
-				networkmanager networkmanager-openvpn traceroute net-tools openresolv
-				dialog dhcpcd wpa_supplicant ifplugd wireless_tools bind
-				pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils 
-				bluez bluez-utils xdg-utils xdg-user-dirs libinput
-				grub efibootmgr dosfstools mtools os-prober
-			}
+	# arch-chroot /mnt
+	Set font permanently:
+		# echo FONT=ter-dXXb.psf.gz >> /etc/vconsole.conf
+	Install packages:
+		# pacman -S{
+			vim vi nano sudo base-devel terminus-font git wget ttf-dejavu gvfs
+			networkmanager networkmanager-openvpn traceroute net-tools openresolv
+			dialog dhcpcd wpa_supplicant ifplugd wireless_tools bind
+			pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils 
+			bluez bluez-utils xdg-utils xdg-user-dirs libinput
+			grub efibootmgr dosfstools mtools os-prober
+		}
 
 11. Time zone
-		# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
-			ln -sf /usr/share/zoneinfo/Asia/Tehran /etc/localtime
-		# hwclock --systohc
+	# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+		ln -sf /usr/share/zoneinfo/Asia/Tehran /etc/localtime
+	# hwclock --systohc
 		
 12. Localization
-		# vim /etc/locale.gen
-			Uncomment: 
-				en_US.UTF-8 UTF-8
-				en_US ISO-XXXX-X
-				fa_IR UTF-8
-			Save the file
-		# locale-gen
-		# echo LANG=en_US.UTF-8 >> /etc/locale.conf
+	# vim /etc/locale.gen
+		Uncomment: 
+			en_US.UTF-8 UTF-8
+			en_US ISO-XXXX-X
+			fa_IR UTF-8
+		Save the file
+	# locale-gen
+	# echo LANG=en_US.UTF-8 >> /etc/locale.conf
 
 13. Network configuration
-		# echo <myhostname> >> /etc/hostname
-		# vim /etc/hosts
-			Paste:
-				127.0.0.1	localhost
-				::1		localhost
-				127.0.1.1	<myhostname>.localdomain	<myhostname>
+	# echo <myhostname> >> /etc/hostname
+	# vim /etc/hosts
+		Paste:
+			127.0.0.1	localhost
+			::1		localhost
+			127.0.1.1	<myhostname>.localdomain	<myhostname>
 
 14. Root password
-		# passwd
+	# passwd
 
 15. Add user(s)
-		# useradd -m -g users -G wheel <username>
-		Give user the admin privileges:
-			# EDITOR=nano visudo
-				Uncomment: %wheel ALL=(ALL:ALL) ALL
-		Add password for the user:
-			# passwd <username>
-		Make sure the user directory is created:
-			#ls /home/username
+	# useradd -m -g users -G wheel <username>
+	Give user the admin privileges:
+		# EDITOR=nano visudo
+			Uncomment: %wheel ALL=(ALL:ALL) ALL
+	Add password for the user:
+		# passwd <username>
+	Make sure the user directory is created:
+		#ls /home/username
 		
 16. Boot loader (inside arch-chroot)
-		# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-		Make sure os-porber is not disabled in /etc/default/grub
-		Make grub config file:
-			# grub-mkconfig -o /boot/grub/grub.cfg
+	# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB		<- For UEFI with GPT
+	# grub-install --target=i386-pc /dev/DISK						<- For BIOS with MBR
+	Make sure os-porber is not disabled in /etc/default/grub
+	Make grub config file:
+		# grub-mkconfig -o /boot/grub/grub.cfg
 				
 17. Reboot
-		Regenerate initramfs, Exit chroot, unmount all and reboot:
-		# mkinitcpio -p linux
-		# exit
-		# umount -R /mnt
-		# reboot
+	Regenerate initramfs, Exit chroot, unmount all and reboot:
+	# mkinitcpio -p linux
+	# exit
+	# umount -R /mnt
+	# reboot
 
 -----------------------------------------POST tweaks------------------------------------------
 A. Add DNS server (Configure NetworkManager to use resolvconf)
