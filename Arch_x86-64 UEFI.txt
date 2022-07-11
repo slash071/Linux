@@ -25,27 +25,21 @@
 
 04. Partition the disks
 	Partitioning using cfdisk:
-		300M for boot is enough as EFI System		<- For UEFI with GPT
-		512 for boot is enough as Linux filesystem	<- For BIOS with MBR, (optional)
-		2G-8G for swap as Linux swap			(optional)
-		Desired amount for home as Linux filesystem	(optional)
+		300M for boot is enough as EFI System
+		2G for swap as Linux swap
 		Remaining space for the root as Linux filesystem
 
 05. Format the partitions
 	# mkfs.ext4 /dev/root_partition
-	# mkfs.ext4 /dev/home_partiton
 	# mkswap /dev/swap_partition
 	(Only format the ESP/Boot if you created now,
 	In other words, if you are dual-booting DO NOT format the EFI partition.)
-		# mkfs.fat -F 32 /dev/efi_system_partition	<- For UEFI with GPT
-		# mkfs.ext4 /dev/boot_partition			<- For BIOS with MBR
+		# mkfs.fat -F 32 /dev/efi_system_partition
 
 06. Mount the file systems
 	# mount /dev/root_partition /mnt
-	# swapon /dev/swap_partition				(if created)
-	# mount --mkdir /dev/home_partition /mnt/home    	(if created)
-	# mount --mkdir /dev/efi_system_partition /mnt/boot	<- For UEFI with GPT
-	# mount --mkdir /dev/boot_partition /mnt/boot		<- For BIOS with MBR, (if created)
+	# swapon /dev/swap_partition
+	# mount --mkdir /dev/efi_system_partition /mnt/boot
 		
 ----------------------------------------------Installation----------------------------------------------
 07. Select the mirrors
@@ -110,8 +104,7 @@
 		#ls /home/username
 		
 16. Boot loader (inside arch-chroot)
-	# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB		<- For UEFI with GPT
-	# grub-install --target=i386-pc /dev/sdX (Should be a disk, not a partition)		<- For BIOS with MBR
+	# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 	Make sure os-porber is not disabled in /etc/default/grub
 	Make grub config file:
 		# grub-mkconfig -o /boot/grub/grub.cfg
