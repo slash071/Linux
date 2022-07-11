@@ -1,4 +1,4 @@
----------------------------------------Pre-installation---------------------------------------
+--------------------------------------------Pre-installation--------------------------------------------
 00. Set the console keyboard layout
 	Default is US (No need to loadkeys)
 	Change console font & size:
@@ -26,9 +26,9 @@
 04. Partition the disks
 	Partitioning using cfdisk:
 		300M for boot is enough as EFI System		<- For UEFI with GPT
-		512 for boot is enough as Linux filesystem	<- For BIOS with MBR
-		2G for swap as Linux swap
-		Desired amount for home as Linux filesystem
+		512 for boot is enough as Linux filesystem	<- For BIOS with MBR, (optinal)
+		2G-10G for swap as Linux swap			(optional)
+		Desired amount for home as Linux filesystem	(optional)
 		Remaining space for the root as Linux filesystem
 
 05. Format the partitions
@@ -36,7 +36,7 @@
 	# mkfs.ext4 -L HOME /dev/home_partiton
 	# mkswap -L SWAP /dev/swap_partition
 	(Only format the ESP/Boot if you created now,
-	In other words, if you are dual-booting DO NOT format EFI partition,
+	In other words, if you are dual-booting DO NOT format the EFI partition,
 	Just use it)
 		# mkfs.fat -F 32 /dev/efi_system_partition	<- For UEFI with GPT
 			# fatlabel /dev/sda4 BOOT
@@ -47,9 +47,9 @@
 	# swapon /dev/swap_partition				(if created)
 	# mount --mkdir /dev/disk/by-label/HOME /mnt/home    	(if created)
 	# mount --mkdir /dev/efi_system_partition /mnt/boot	<- For UEFI with GPT
-	# mount --mkdir /dev/boot_partition /mnt/boot		<- For BIOS with MBR
+	# mount --mkdir /dev/boot_partition /mnt/boot		<- For BIOS with MBR, (if created)
 		
------------------------------------------Installation-----------------------------------------
+----------------------------------------------Installation----------------------------------------------
 07. Select the mirrors
 	Synchronize servers:
 		# pacman -Syy
@@ -57,7 +57,7 @@
 08. Install essential packages
 	# pacstrap /mnt base linux linux-firmware linux-headers intel-ucode
 		
--------------------------------------Configure the system-------------------------------------
+------------------------------------------Configure the system------------------------------------------
 09. Fstab
 	# genfstab -U /mnt >> /mnt/etc/fstab
 	
@@ -125,7 +125,7 @@
 	# umount -R /mnt
 	# reboot
 
------------------------------------------POST tweaks------------------------------------------
+----------------------------------------------POST tweaks-----------------------------------------------
 A. Add DNS server (Configure NetworkManager to use resolvconf)
 	# sudo vim /etc/NetworkManager/conf.d/rc-manager.conf
 		Paste:
