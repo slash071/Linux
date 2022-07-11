@@ -28,20 +28,24 @@
 		300M for boot is enough as EFI System		<- For UEFI with GPT
 		512 for boot is enough as Linux filesystem	<- For BIOS with MBR
 		2G for swap as Linux swap
+		Desired amount for home as Linux filesystem
 		Remaining space for the root as Linux filesystem
 
 05. Format the partitions
-	# mkfs.ext4 /dev/root_partition
-	# mkswap /dev/swap_partition
+	# mkfs.ext4 -L ROOT /dev/root_partition
+	# mkfs.ext4 -L HOME /dev/home_partiton
+	# mkswap -L SWAP /dev/swap_partition
 	(Only format the ESP/Boot if you created now,
 	In other words, if you are dual-booting DO NOT format EFI partition,
 	Just use it)
 		# mkfs.fat -F 32 /dev/efi_system_partition	<- For UEFI with GPT
-		# mkfs.ext4 /dev/boot_partition			<- For BIOS with MBR
+			# fatlabel /dev/sda4 BOOT
+		# mkfs.ext4 -L BOOT /dev/boot_partition		<- For BIOS with MBR
 
 06. Mount the file systems
 	# mount /dev/root_partition /mnt
-	# swapon /dev/swap_partition
+	# swapon /dev/swap_partition				(if created)
+	# mount --mkdir /dev/disk/by-label/HOME /mnt/home    	(if created)
 	# mount --mkdir /dev/efi_system_partition /mnt/boot	<- For UEFI with GPT
 	# mount --mkdir /dev/boot_partition /mnt/boot		<- For BIOS with MBR
 		
