@@ -48,7 +48,7 @@
 			# pacman -Syy
 		
 08. Install essential packages
-		# pacstrap /mnt base linux linux-firmware linux-headers
+		# pacstrap /mnt base linux linux-firmware linux-headers intel-ucode
 		
 ---------------------------Configure the system---------------------------
 09. Fstab
