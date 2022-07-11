@@ -109,7 +109,7 @@
 		
 16. Boot loader (inside arch-chroot)
 	# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB		<- For UEFI with GPT
-	# grub-install --target=i386-pc /dev/DISK						<- For BIOS with MBR
+	# grub-install --target=i386-pc /dev/sdX (Should be a disk, not a partition)		<- For BIOS with MBR
 	Make sure os-porber is not disabled in /etc/default/grub
 	Make grub config file:
 		# grub-mkconfig -o /boot/grub/grub.cfg
