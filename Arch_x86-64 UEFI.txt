@@ -1,4 +1,4 @@
---------------------------------------------Pre-installation--------------------------------------------
+--------------------------------------Pre-installation--------------------------------------
 00. Set the console keyboard layout
 	Default is US (No need to loadkeys)
 	Change console font & size:
@@ -41,7 +41,7 @@
 	# swapon /dev/swap_partition
 	# mount --mkdir /dev/efi_system_partition /mnt/boot
 		
-----------------------------------------------Installation----------------------------------------------
+----------------------------------------Installation----------------------------------------
 07. Select the mirrors
 	Synchronize servers:
 		# pacman -Syy
@@ -49,7 +49,7 @@
 08. Install essential packages
 	# pacstrap /mnt base linux linux-firmware linux-headers intel-ucode
 		
-------------------------------------------Configure the system------------------------------------------
+------------------------------------Configure the system------------------------------------
 09. Fstab
 	# genfstab -U /mnt >> /mnt/etc/fstab
 	
@@ -116,7 +116,7 @@
 	# umount -R /mnt
 	# reboot
 
-----------------------------------------------POST tweaks-----------------------------------------------
+----------------------------------------POST tweaks-----------------------------------------
 A. Add DNS server (Configure NetworkManager to use resolvconf)
 	# sudo vim /etc/NetworkManager/conf.d/rc-manager.conf
 		Paste:
