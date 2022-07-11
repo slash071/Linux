@@ -36,8 +36,7 @@
 	# mkfs.ext4 /dev/home_partiton
 	# mkswap /dev/swap_partition
 	(Only format the ESP/Boot if you created now,
-	In other words, if you are dual-booting DO NOT format the EFI partition,
-	Just use it)
+	In other words, if you are dual-booting DO NOT format the EFI partition.)
 		# mkfs.fat -F 32 /dev/efi_system_partition	<- For UEFI with GPT
 		# mkfs.ext4 /dev/boot_partition			<- For BIOS with MBR
 
