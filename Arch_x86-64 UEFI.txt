@@ -60,7 +60,7 @@
 		Install packages:
 			# pacman -S{
 				vim vi nano sudo base-devel terminus-font git wget ttf-dejavu gvfs
-				networkmanager networkmanager-openvpn traceroute net-tools openresolv
+				networkmanager traceroute net-tools openresolv
 				dialog dhcpcd wpa_supplicant ifplugd wireless_tools bind
 				pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils 
 				bluez bluez-utils xdg-utils xdg-user-dirs libinput
