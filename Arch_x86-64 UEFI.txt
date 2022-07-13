@@ -40,19 +40,19 @@
 		# mount /dev/root_partition /mnt
 		# swapon /dev/swap_partition
 		# mount --mkdir /dev/efi_system_partition /mnt/boot
-		
+
 ----------------------------------------Installation----------------------------------------
 07. Select the mirrors
 		Synchronize package databases:
 			# pacman -Syy
-	
+
 08. Install essential packages
 		# pacstrap /mnt base linux linux-firmware linux-headers intel-ucode
-		
+
 ------------------------------------Configure the system------------------------------------
 09. Fstab
 		# genfstab -U /mnt >> /mnt/etc/fstab
-	
+
 10. Chroot
 		# arch-chroot /mnt
 		Set font permanently:
@@ -71,7 +71,7 @@
 		# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 			ln -sf /usr/share/zoneinfo/Asia/Tehran /etc/localtime
 		# hwclock --systohc
-		
+
 12. Localization
 		# vim /etc/locale.gen
 			Uncomment: 
@@ -102,13 +102,13 @@
 			# passwd <username>
 		Make sure the user directory is created:
 			# ls /home/<username>
-		
+
 16. Boot loader (Inside arch-chroot)
 		# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 		Make sure os-porber is not disabled in /etc/default/grub
 		Make grub config file:
 			# grub-mkconfig -o /boot/grub/grub.cfg
-				
+
 17. Reboot
 		Regenerate initramfs, exit chroot, unmount all and reboot:
 		# mkinitcpio -p linux
