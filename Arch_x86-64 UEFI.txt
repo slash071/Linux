@@ -20,7 +20,7 @@
 
 03. Update the system clock
 	# timedatectl set-ntp true
-	check status:
+	Check status:
 		# timedatectl status
 
 04. Partition the disks
@@ -32,8 +32,8 @@
 05. Format the partitions
 	# mkfs.ext4 /dev/root_partition
 	# mkswap /dev/swap_partition
-	(Only format the ESP/Boot if you created now,
-	In other words, if you are dual-booting, DO NOT format the EFI partition.)
+	(Only format the ESP if you created now,
+	In other words, if you are dual-booting, DO NOT format the EFI partition)
 		# mkfs.fat -F 32 /dev/efi_system_partition
 
 06. Mount the file systems
@@ -101,7 +101,7 @@
 	Add password for the user:
 		# passwd <username>
 	Make sure the user directory is created:
-		#ls /home/username
+		# ls /home/username
 		
 16. Boot loader (inside arch-chroot)
 	# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
@@ -110,7 +110,7 @@
 		# grub-mkconfig -o /boot/grub/grub.cfg
 				
 17. Reboot
-	Regenerate initramfs, Exit chroot, unmount all and reboot:
+	Regenerate initramfs, exit chroot, unmount all and reboot:
 	# mkinitcpio -p linux
 	# exit
 	# umount -R /mnt
@@ -133,7 +133,7 @@ B. Make network reachable
 		# nmtui
 	# sudo systemctl enable NetworkManager
 
-C. Install yay(AUR helper)
+C. Install yay (AUR helper)
 	# cd /opt
 	# sudo git clone https://aur.archlinux.org/yay-git.git
 	# sudo chown -R username:users ./yay-git
