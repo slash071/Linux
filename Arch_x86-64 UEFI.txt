@@ -23,7 +23,7 @@
 		Check status:
 			# timedatectl status
 
-04. Partition the disks
+04. Partition the disks (UEFI)
 		Partitioning using cfdisk:
 			300M for boot is enough as EFI System
 			2G for swap as Linux swap
