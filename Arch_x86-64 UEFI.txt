@@ -125,7 +125,7 @@ A. Add DNS server (Configure NetworkManager to use resolvconf)
 		# sudo vim /etc/resolvconf.conf
 			Paste:
 				name_servers="8.8.8.8 8.8.4.4"
-		#sudo resolvconf -u	
+		# sudo resolvconf -u	
 
 B. Make network reachable
 		# sudo systemctl start NetworkManager
