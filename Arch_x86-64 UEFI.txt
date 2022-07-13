@@ -150,10 +150,10 @@ E. Configure touchpad
 		# sudo nano /etc/X11/xorg.conf.d/30-touchpad.conf
 			Paste:
 				Section "InputClass"
-						Identifier "devname"
-						Driver "libinput"
-						Option "Tapping" "on"
-						Option "NaturalScrolling" "true"
+					Identifier "devname"
+					Driver "libinput"
+					Option "Tapping" "on"
+					Option "NaturalScrolling" "true"
 				EndSection
 
 Done!
