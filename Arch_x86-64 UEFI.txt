@@ -3,12 +3,12 @@
 		Default is US (No need to loadkeys)
 		Change console font & size:
 			# setfont ter-dXXb.psf.gz
-			(fonts are stored in /usr/share/kbd/consolefonts/)
+			(Fonts are stored in /usr/share/kbd/consolefonts/)
 		
 01. Verify the boot mode
 		# ls /sys/firmware/efi/efivars
-			If shows directory its UEFI mode,
-			If directory does not exist, it may be BIOS mode.
+			If shows directory it's UEFI mode,
+			If directory does not exist, it may be BIOS or CSM mode.
 
 02. Connect to the internet
 		Ensure network interface:
@@ -33,7 +33,7 @@
 		# mkfs.ext4 /dev/root_partition
 		# mkswap /dev/swap_partition
 		(Only format the ESP if you created now,
-		In other words, if you are dual-booting, DO NOT format the EFI partition)
+		In other words, if you are dual-booting, DO NOT format the EFI system partition)
 			# mkfs.fat -F 32 /dev/efi_system_partition
 
 06. Mount the file systems
@@ -43,7 +43,7 @@
 		
 ----------------------------------------Installation----------------------------------------
 07. Select the mirrors
-		Synchronize servers:
+		Synchronize package databases:
 			# pacman -Syy
 	
 08. Install essential packages
@@ -117,7 +117,7 @@
 		# reboot
 
 ----------------------------------------POST tweaks-----------------------------------------
-A. Add DNS server (Configure NetworkManager to use resolvconf)
+A. Add DNS servers (Configure NetworkManager to use resolvconf)
 		# sudo vim /etc/NetworkManager/conf.d/rc-manager.conf
 			Paste:
 				[main]
