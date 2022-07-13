@@ -33,7 +33,7 @@
 	# mkfs.ext4 /dev/root_partition
 	# mkswap /dev/swap_partition
 	(Only format the ESP/Boot if you created now,
-	In other words, if you are dual-booting DO NOT format the EFI partition.)
+	In other words, if you are dual-booting, DO NOT format the EFI partition.)
 		# mkfs.fat -F 32 /dev/efi_system_partition
 
 06. Mount the file systems
@@ -129,7 +129,7 @@ A. Add DNS server (Configure NetworkManager to use resolvconf)
 
 B. Make network reachable
 	# sudo systemctl start NetworkManager
-	For Wi-Fi activate connection with:
+	For Wi-Fi, activate connection with:
 		# nmtui
 	# sudo systemctl enable NetworkManager
 
