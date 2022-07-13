@@ -101,9 +101,9 @@
 		Add password for the user:
 			# passwd <username>
 		Make sure the user directory is created:
-			# ls /home/username
+			# ls /home/<username>
 		
-16. Boot loader (inside arch-chroot)
+16. Boot loader (Inside arch-chroot)
 		# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 		Make sure os-porber is not disabled in /etc/default/grub
 		Make grub config file:
