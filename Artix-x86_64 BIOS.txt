@@ -1,0 +1,169 @@
+--------------------------------------Pre-installation--------------------------------------
+00. Set the keyboard layout
+		Default is US (No need to loadkeys)
+
+01. Verify the boot mode
+		# ls /sys/firmware/efi/efivars
+			If shows directory it's UEFI mode,
+			If directory does not exist, it may be BIOS or CSM mode.
+			
+02. Partition your disk (BIOS)
+		Partitioning using cfdisk:
+			512M for boot is enough as Linux filesystem
+			8G for swap as Linux swap
+			Desired space for home as Linux filesystem
+			Remaining space for the root as Linux filesystem
+
+03. Format partitions
+		# mkfs.ext4 /dev/root_partition
+		# mkfs.ext4 /dev/home_partition
+		# mkswap /dev/swap_partition
+		(Only format the Boot partition if you created now,
+		In other words, if you are dual-booting, DO NOT format the Boot partition)
+			# mkfs.ext4 /dev/boot_partition
+		
+04. Mount Partitions
+		# swapon /dev/swap_partition
+		# mount /dev/root_partition /mnt
+		# mkdir /mnt/boot
+		# mkdir /mnt/home
+		# mount /dev/home_partition /mnt/home
+		# mount /dev/boot_partition /mnt/boot
+
+05. Connect to the Internet
+		Ensure network interface:
+			# ip a
+		Activate wireless interface:
+			# rfkill unblock wifi
+			# ip link set <interface> up
+			Verify the interface:
+				# ip link show <interface>
+			Wi-Fi utility:
+				# connmanctl
+		Verify connection: 
+			# ping archlinux.org
+
+06. Select the mirrors
+		Synchronize package databases:
+			# pacman -Syy
+
+07. Install base system
+		Choose your preferred init:
+			# basestrap /mnt base base-devel runit elogind-runit intel-ucode
+			# basestrap /mnt base base-devel openrc elogind-openrc intel-ucode
+			(Check the website for more init systems)
+
+08. Install a kernel
+		# basestrap /mnt linux linux-firmware linux-headers
+
+09. Fstab
+		# fstabgen -U /mnt >> /mnt/etc/fstab 
+	
+10. Chroot
+		# artix-chroot /mnt
+		Set font permanently:
+			# echo FONT=ter-dXXb.psf.gz >> /etc/vconsole.conf
+		Install packages:
+			# pacman -S{
+				vim vi nano sudo base-devel terminus-font git wget ttf-dejavu gvfs
+				networkmanager traceroute net-tools openresolv
+				dialog dhcpcd wpa_supplicant ifplugd wireless_tools bind
+				pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils 
+				bluez bluez-utils xdg-utils xdg-user-dirs libinput
+				grub efibootmgr dosfstools mtools os-prober
+				networkmanager-<init> bluez-<init>
+			}
+
+----------------------------------Configure the base system---------------------------------
+12. Set system clock
+		# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+			ln -sf /usr/share/zoneinfo/Asia/Tehran /etc/localtime
+		# hwclock --systohc
+		
+13. Localization
+		# vim /etc/locale.gen
+			Uncomment: 
+				en_US.UTF-8 UTF-8
+				en_US ISO-XXXX-X
+				fa_IR UTF-8
+			Save the file
+		# locale-gen
+		# echo LANG=en_US.UTF-8 >> /etc/locale.conf
+		
+14. Boot Loader (Inside artix-chroot)
+		# grub-install --recheck /dev/sda
+		Make sure os-porber is not disabled in /etc/default/grub
+		Make grub config file:
+			# grub-mkconfig -o /boot/grub/grub.cfg
+
+15. Root password
+		# passwd
+
+16. Add user(s)
+		# useradd -m -g users -G wheel <username>
+		Give user the admin privileges:
+			# EDITOR=nano visudo
+				Uncomment: %wheel ALL=(ALL:ALL) ALL
+		Add password for the user:
+			# passwd <username>
+		Make sure the user directory is created:
+			# ls /home/<username>
+
+17. Network configuration
+		# echo <myhostname> >> /etc/hostname
+		# vim /etc/hosts
+			Paste:
+				127.0.0.1	localhost
+				::1			localhost
+				127.0.1.1	<myhostname>.localdomain	<myhostname>
+
+18. Reboot
+		Regenerate initramfs, exit chroot, unmount all and reboot:
+		# mkinitcpio -p linux
+		# exit
+		# umount -R /mnt
+		# reboot
+
+----------------------------------------POST tweaks-----------------------------------------
+A. Add DNS servers (Configure NetworkManager to use resolvconf)
+		# sudo vim /etc/NetworkManager/conf.d/rc-manager.conf
+			Paste:
+				[main]
+				rc-manager=resolvconf
+		# sudo vim /etc/resolvconf.conf
+			Paste:
+				name_servers="8.8.8.8 8.8.4.4"
+		# sudo resolvconf -u
+
+B. Make network reachable
+		In runit:
+			# ln -s /etc/runit/sv/NetworkManager /run/runit/service/NetworkManager
+		In OpenRC:
+			# rc-update add NetworkManager default
+		For Wi-Fi, activate connection with:
+			# nmtui
+		
+C. Install yay (AUR helper)
+		# cd /opt
+		# sudo git clone https://aur.archlinux.org/yay-git.git
+		# sudo chown -R username:users ./yay-git
+		# cd yay-git
+		# makepkg -si
+
+D. Disable beep sound (Unloading the pcspkr kernel module)
+		# sudo vim /etc/modprobe.d/nobeep.conf
+			Paste:	
+				blacklist pcspkr
+		# sudo mkinitcpio -p linux
+
+E. Configure touchpad
+		# sudo nano /etc/X11/xorg.conf.d/30-touchpad.conf
+			Paste:
+				Section "InputClass"
+					Identifier "devname"
+					Driver "libinput"
+					Option "Tapping" "on"
+					Option "NaturalScrolling" "true"
+				EndSection
+
+Done!
