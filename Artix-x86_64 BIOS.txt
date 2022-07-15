@@ -70,7 +70,7 @@
 				dialog dhcpcd wpa_supplicant ifplugd wireless_tools bind
 				pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils 
 				bluez bluez-utils xdg-utils xdg-user-dirs libinput
-				grub efibootmgr dosfstools mtools os-prober
+				grub efibootmgr dosfstools mtools ntfs-3g os-prober
 				networkmanager-<init> bluez-<init>
 			}
 
