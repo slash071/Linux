@@ -65,11 +65,11 @@
 			# echo FONT=ter-dXXb.psf.gz >> /etc/vconsole.conf
 		Install packages:
 			# pacman -S{
-				vim vi nano sudo base-devel terminus-font git wget ttf-dejavu gvfs
+				vim vi nano sudo base-devel terminus-font git wget ttf-dejavu
 				networkmanager traceroute net-tools openresolv
-				dialog dhcpcd wpa_supplicant ifplugd wireless_tools bind
+				dialog dhcpcd wpa_supplicant wireless_tools bind
 				pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils 
-				bluez bluez-utils xdg-utils xdg-user-dirs libinput
+				bluez bluez-utils xdg-utils xdg-user-dirs libinput gvfs
 				grub efibootmgr dosfstools mtools ntfs-3g os-prober
 				networkmanager-<init> bluez-<init>
 			}
