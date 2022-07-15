@@ -91,7 +91,7 @@
 		# echo LANG=en_US.UTF-8 >> /etc/locale.conf
 		
 14. Boot Loader (Inside artix-chroot)
-		# grub-install --recheck /dev/sda
+		# grub-install --recheck /dev/<disk>
 		Make sure os-porber is not disabled in /etc/default/grub
 		Make grub config file:
 			# grub-mkconfig -o /boot/grub/grub.cfg
