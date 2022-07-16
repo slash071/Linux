@@ -49,8 +49,8 @@
 
 07. Install base system
 		Choose your preferred init:
-			# basestrap /mnt base base-devel runit elogind-runit intel-ucode
 			# basestrap /mnt base base-devel openrc elogind-openrc intel-ucode
+			# basestrap /mnt base base-devel runit elogind-runit intel-ucode
 			(Check the website for more init systems)
 
 08. Install a kernel
@@ -136,8 +136,6 @@ A. Add DNS servers (Configure NetworkManager to use resolvconf)
 		# sudo resolvconf -u
 
 B. Make network reachable
-		In runit:
-			# ln -s /etc/runit/sv/NetworkManager /run/runit/service/NetworkManager
 		In OpenRC:
 			# rc-update add NetworkManager default
 		For Wi-Fi, activate connection with:
