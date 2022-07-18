@@ -61,9 +61,6 @@
 	
 10. Chroot
 		# artix-chroot /mnt
-		Set font permanently:
-			# echo FONT=ter-dXXb.psf.gz >> /etc/vconsole.conf
-		Install packages:
 			# pacman -S{
 				vim vi nano sudo base-devel terminus-font git wget ttf-dejavu
 				networkmanager traceroute net-tools openresolv
