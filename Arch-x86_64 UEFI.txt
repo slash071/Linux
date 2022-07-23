@@ -58,14 +58,13 @@
 		Set font permanently:
 			# echo FONT=ter-dXXb.psf.gz >> /etc/vconsole.conf
 		Install packages:
-			# pacman -S{
-				vim vi nano sudo base-devel terminus-font git wget ttf-dejavu
-				networkmanager traceroute net-tools openresolv
-				dialog dhcpcd wpa_supplicant ifplugd wireless_tools bind
-				pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils 
-				bluez bluez-utils xdg-utils xdg-user-dirs libinput gvfs
+			# pacman -S \
+				vim vi nano sudo base-devel terminus-font git wget ttf-dejavu \
+				networkmanager traceroute net-tools openresolv \
+				dialog dhcpcd wpa_supplicant ifplugd wireless_tools bind \
+				pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils \ 
+				bluez bluez-utils xdg-utils xdg-user-dirs libinput gvfs \
 				grub efibootmgr dosfstools mtools ntfs-3g os-prober
-			}
 
 11. Time zone
 		# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
