@@ -61,15 +61,14 @@
 	
 10. Chroot
 		# artix-chroot /mnt
-			# pacman -S{
-				vim vi nano sudo base-devel terminus-font git wget ttf-dejavu
-				networkmanager traceroute net-tools openresolv
-				dialog dhcpcd wpa_supplicant wireless_tools bind
-				pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils 
-				bluez bluez-utils xdg-utils xdg-user-dirs libinput gvfs
-				grub efibootmgr dosfstools mtools ntfs-3g os-prober
+			# pacman -S \
+				vim vi nano sudo base-devel terminus-font git wget ttf-dejavu \
+				networkmanager traceroute net-tools openresolv \
+				dialog dhcpcd wpa_supplicant wireless_tools bind \
+				pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils \
+				bluez bluez-utils xdg-utils xdg-user-dirs libinput gvfs \
+				grub efibootmgr dosfstools mtools ntfs-3g os-prober \
 				networkmanager-<init> bluez-<init>
-			}
 
 ----------------------------------Configure the base system---------------------------------
 12. Set system clock
