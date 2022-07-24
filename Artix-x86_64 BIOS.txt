@@ -62,7 +62,7 @@
 10. Chroot
 		# artix-chroot /mnt
 			# pacman -S \
-				vim vi nano sudo base-devel terminus-font git wget ttf-dejavu \
+				vim vi nano sudo terminus-font git wget ttf-dejavu \
 				networkmanager traceroute net-tools openresolv \
 				dialog dhcpcd wpa_supplicant wireless_tools bind \
 				pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils \
